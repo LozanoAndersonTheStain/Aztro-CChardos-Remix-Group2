@@ -4,6 +4,14 @@ export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        sky: {
+          cloud: '#FFFFFF',    // Cloud White
+          dark: '#000835',     // Dark Sky
+          vivid: '#3A8BFF',    // Vivid Sky
+          light: '#C5D5F9',    // Light Sky
+        }
+      },
       fontFamily: {
         sans: [
           "Inter",
