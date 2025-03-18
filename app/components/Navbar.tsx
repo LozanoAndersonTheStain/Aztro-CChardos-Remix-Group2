@@ -1,23 +1,27 @@
-import { Link } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 
 export default function Navbar() {
-    return (
-        <nav className="backdrop-blur-md bg-white/10 text-white p-4 flex justify-between items-center fixed top-0 left-0 w-full z-50">
-            <img src="/amadeus-logo.png" alt="Amadeus Logo" className="h-4" />
-            <ul className="flex space-x-3 text-lg">
-                <li>
-                    <Link to="/" className="text-[#3A8BFF]">Inicio</Link>
-                </li>
-                <li>
-                    <Link to="/contacto" className="text-[#3A8BFF]">Contacto</Link>
-                </li>
-                <li>
-                    <Link to="/reporte" className="text-[#3A8BFF]">Reporte</Link>
-                </li>
-                <li>
-                <Link to="/amadeus" className="text-[#3A8BFF]" >Amadeus</Link>
-                </li>
-            </ul>
-        </nav>
-    );
+  const location = useLocation();
+
+  return (
+    <nav className={`backdrop-blur-lg bg-black/10 text-white p-6 flex justify-between items-center fixed transition-all duration-5000 ease-in-out mx-4 md:mx-8 rounded-xl w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] z-50 ${
+      location.pathname === "/" ? "top-6" : "-top-24"
+    }`}>
+      <img src="/amadeus-logo.png" alt="Amadeus Logo" className="h-6" />
+      <ul className="flex space-x-3 text-xl text-[#FFFFFF] gap-8">
+        <li>
+          <Link to="/">Inicio</Link>
+        </li>
+        <li>
+          <Link to="/contacto">Contacto</Link>
+        </li>
+        <li>
+          <Link to="/reporte">Reporte</Link>
+        </li>
+        <li>
+          <Link to="/amadeus">Amadeus</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
