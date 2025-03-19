@@ -4,7 +4,7 @@ import { API_URL, TOKEN } from "../config/api.config";
 
 export async function getAllQuestions() {
   try {
-    const response = await fetch(`${API_URL}/getAllQuestions`, {
+    const response = await fetch(`${API_URL}Questions/getAllQuestions`, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
         "Content-Type": "application/json",
