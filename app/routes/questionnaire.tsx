@@ -1,13 +1,25 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Questionnaire } from "../components/QuestionnaireScreen.component";
+import type { MetaFunction, LoaderFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { Questionnaire } from "~/components/QuestionnaireScreen.component";
+import type { QuestionsResponse } from "~/interfaces/QuestionsResponse.interface";
+import { getAllQuestions } from "~/service/questions.service";
 
 export const meta: MetaFunction = () => {
   return [
     { title: "Amadeus - Questionnaire" },
-    { name: "description", content: "Aquí es donde selecionaras las preguntas que te ayudaran a escoger la mejor opcción de viaje para ti" },
+    {
+      name: "description",
+      content:
+        "Aquí es donde seleccionarás las preguntas que te ayudarán a escoger la mejor opción de viaje para ti",
+    },
   ];
 };
 
+export const loader: LoaderFunction = async () => {
+  return getAllQuestions();
+};
+
 export default function QuestionnaireRoute() {
-  return <Questionnaire />;
+  const data = useLoaderData<QuestionsResponse>();
+  return <Questionnaire questionTexts={data.questionTexts} />;
 }
