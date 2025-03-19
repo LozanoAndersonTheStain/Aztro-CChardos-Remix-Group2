@@ -1,6 +1,6 @@
 export interface ButtonProps {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
 }
