@@ -32,8 +32,6 @@ export default function Index() {
             <Button
               text="Encuentra tu destino perfecto"
               variant="primary"
-              onClick={() => console.log("Anterior")}
-              
             />
           </Link>
         </div>
