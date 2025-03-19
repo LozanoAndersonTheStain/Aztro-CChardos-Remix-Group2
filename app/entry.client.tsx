@@ -4,19 +4,10 @@
  * For more information, see https://remix.run/file-conventions/entry.client
  */
 
-// app/entry.client.tsx
-
-import { hydrate } from 'react-dom';
-import { RemixBrowser } from '@remix-run/react';
-import './styles/global.css'; // Asegúrate de importar tu archivo CSS global
-
-
-
-
 import { RemixBrowser } from "@remix-run/react";
 import { startTransition, StrictMode } from "react";
 import { hydrateRoot } from "react-dom/client";
-hydrate(<RemixBrowser />, document);
+
 startTransition(() => {
   hydrateRoot(
     document,
