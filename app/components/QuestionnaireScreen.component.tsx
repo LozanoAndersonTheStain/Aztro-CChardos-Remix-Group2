@@ -320,7 +320,7 @@ export function Questionnaire() {
                   index === currentQuestion
                     ? "bg-sky-vivid text-white"
                     : selections[index] !== -1
-                    ? "bg-blue-200 text-gray-700 cursor-pointer hover:bg-blue-300"
+                    ? "bg-blue-200 text-gray-700 cursor-pointer hover:bg-sky-700 hover:text-white"
                     : "bg-gray-200 text-gray-500 cursor-not-allowed"
                 }`}
             >
