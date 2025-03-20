@@ -14,7 +14,7 @@ export function Button({
         ${
           variant === "primary"
             ? "bg-blue-500 text-white hover:bg-blue-600 disabled:bg-blue-300"
-            : "bg-gray-200 text-gray-800 hover:bg-gray-300 disabled:bg-gray-100"
+            : "bg-gray-200 text-gray-800 hover:bg-gray-300 disabled:bg-transparent"
         }`}
     >
       {text}
