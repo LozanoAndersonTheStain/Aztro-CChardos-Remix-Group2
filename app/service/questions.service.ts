@@ -1,10 +1,10 @@
 import { json } from "@remix-run/node";
 import type { QuestionsResponse } from "../interfaces/QuestionsResponse.interface";
-import { API_URL, TOKEN } from "../config/api.config";
+import { API_URL_QUESTIONS, TOKEN } from "../config/api.config";
 
 export async function getAllQuestions() {
   try {
-    const response = await fetch(`${API_URL}Questions/getAllQuestions`, {
+    const response = await fetch(`${API_URL_QUESTIONS}/getAllQuestions`, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
         "Content-Type": "application/json",
