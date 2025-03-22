@@ -41,9 +41,6 @@ export default function Navbar() {
         <li>
           <Link to="/amadeus">Amadeus</Link>
         </li>
-        <li>
-          <Link to="/questionnaire">Cuestionario</Link>
-        </li>
       </ul>
     </nav>
   );
