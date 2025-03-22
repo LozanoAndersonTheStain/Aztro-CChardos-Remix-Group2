@@ -81,33 +81,37 @@ export function Questionnaire({ questionTexts }: QuestionsResponse) {
       const selectedOption = question.options.find(
         (opt) => opt.id === selectionId
       );
-
+  
       if (!selectedOption) {
         return {
           questionId: question.id,
+          answerId: -1,
           question: question.category,
           answer: "No seleccionado",
         };
       }
-
+  
       return {
         questionId: question.id,
+        answerId: selectedOption.id,
         question: question.category,
         answer: selectedOption.description,
       };
     });
   };
-
+  
   if (showSummary) {
     return (
       <QuestionSummary
         selections={getSelectionsSummary()}
         onBack={() => setShowSummary(false)}
-        onConfirm={() => console.log("Answers confirmed:", selections)}
+        onConfirm={() => {
+          const answerIds = selections.filter(id => id !== -1);
+          console.log("Answers confirmed:", answerIds);
+        }}
       />
     );
   }
-
   return (
     <div className="min-h-screen p-8 bg-blue-300 flex flex-col items-center justify-center">
       <div className="max-w-6xl mx-auto justify-center items-center">
