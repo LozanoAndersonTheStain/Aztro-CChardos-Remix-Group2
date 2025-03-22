@@ -5,7 +5,11 @@ import { Button } from "~/components/Button.component";
 export const meta: MetaFunction = () => {
   return [
     { title: "Amadeus Travel Game" },
-    { name: "description", content: "En esta plataforma podras encontrar el el destino perfecto que se ajuste a lo que buscas" },
+    {
+      name: "description",
+      content:
+        "En esta plataforma podras encontrar el el destino perfecto que se ajuste a lo que buscas",
+    },
   ];
 };
 
@@ -28,7 +32,7 @@ export default function Index() {
           </h3>
         </div>
         <div className="text-center text-[1.5rem]">
-          <Link to="/questionnaire">
+          <Link to="/questionnaire" prefetch="intent">
             <Button
               text="Encuentra tu destino perfecto"
               variant="primary"
