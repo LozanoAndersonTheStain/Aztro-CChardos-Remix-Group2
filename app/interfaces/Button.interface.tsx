@@ -3,4 +3,5 @@ export interface ButtonProps {
     onClick?: () => void;
     disabled?: boolean;
     variant?: 'primary' | 'secondary';
+    type?: "button" | "submit" | "reset";
 }
