@@ -1,10 +1,27 @@
 import { useState } from "react";
-import type { DestinationResponse } from "~/interfaces/DestinationResponse.interface";
+import { DestinationResponse } from "~/interfaces/DestinationResponse.interface";
 import { Button } from "./Button.component";
+import { Loading } from "./Loading.component";
 
-export function DestinationsScreen({ destinations }: DestinationResponse) {
+interface DestinationsScreenProps {
+  destinations: DestinationResponse;
+}
+
+export function DestinationsScreen({ destinations }: DestinationsScreenProps) {
   const [hoveredLeft, setHoveredLeft] = useState(false);
   const [hoveredRight, setHoveredRight] = useState(false);
+
+  if (!destinations) {
+    return <Loading message="Cargando destinos..." />;
+  }
+
+  if (!destinations.firstCity || !destinations.secondCity) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-2xl text-white">No se encontraron destinos compatibles</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen">
